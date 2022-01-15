@@ -78,7 +78,7 @@ def signup(request):
                 auth.login(request,user)
                 return redirect('taskslist')
         else:
-            return render (request,'accounts/signup.html', {'error':'Password does not match!'})
+            return render (request,'todolist/signup.html', {'error':'Password does not match!'})
     else:
         return render(request,'todolist/signup.html')
 
@@ -89,7 +89,7 @@ def login(request):
             auth.login(request,user)
             return redirect('taskslist')
         else:
-            return render (request,'accounts/login.html', {'error':'Username or password is incorrect!'})
+            return render (request,'todolist/login.html', {'error':'Username or password is incorrect!'})
     else:
         return render(request,'todolist/login.html')
 

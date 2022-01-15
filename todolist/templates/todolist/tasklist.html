@@ -1,0 +1,20 @@
+{% extends 'todolist/base.html' %}
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <p>{{request.user}}</p> 
+    <a href = "/todolist/new/">Add task</a>
+    <br><br>
+    {% for list in tasklist %}  
+            <time class="date">{{ list.created_date }}</time>
+            <p><a href="/todolist/{{list.id}}/"}">{{ list.title }}</a></p>
+            <a href="/todolist/{{list.id}}/edit/">edit</a>
+            <a href="/todolist/{{list.id}}/delete/">delete</a>
+            <p class="isdone">{{list.isdone}}<p>
+    {% endfor %}
+    <a>Logout</a>
+{% else %}
+    <a href="/todolist/login/"">Login<a>
+{% endif %}
+
+{% endblock %}

@@ -90,6 +90,7 @@ def login(request):
             return redirect('taskslist')
         else:
             return render (request,'todolist/login.html', {'error':'Username or password is incorrect!'})
+
     else:
         return render(request,'todolist/login.html')
 

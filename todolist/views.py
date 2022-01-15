@@ -89,7 +89,8 @@ def login(request):
             auth.login(request,user)
             return redirect('taskslist')
         else:
-            return render (request,'todolist/signup.html', {'error':'Username or password is incorrect!'})
+            return render (request,'todolist/login.html', {'error':'Username or password is incorrect!'})
+
     else:
         return render(request,'todolist/login.html')
 

@@ -5,18 +5,15 @@
 {% block content %}
 
 
-{% if error %}
-{{ error }}
-
-<br/>
-<br/>
-{% endif %}
 
 <div class = "loginclose">
 <h1 class="head">Signup!</h1>
 
 <div class="body">
 <form method = "POST" action="{% url 'signup' %}">
+    {% if error %}
+    <h2 style="color:orange;">{{ error }}</h2>
+    {% endif %}
     {% csrf_token %}
     username:
     <br/>

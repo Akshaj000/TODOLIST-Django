@@ -1,9 +1,33 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+  {% if Task.user == request.user %}
 
-  <h1>{{ Task.title }}</h1>
-  <p>{{ Task.description | linebreaksbr}}</p>
-  <a href="/todolist/"}">back</a>
+  <div class="close">
+    <div class="details">
+      <p class="time">{{ Task.created_date }}</p>
+      <br>
+      <h1 style="text-align:center">{{ Task.title }}</h1>
+      <br>
+      <p>{{ Task.description | linebreaksbr}}</p>
+      <br>
+    </div>
 
+      <a href="/todolist/"}"><button class="btnsmall">Back</button></a>
+  <div>
+
+  {% else %} 
+  <div class="close">
+  <p>This page doesnt exist<p>
+  <a href="/todolist/"><button class="btnsmall">Back</button></a>
+  <div>
+  {% endif %}
+
+{% else %}
+<div class="close">
+    <a href="/todolist/login/"><button class="btn">Login</button></a>
+    <a href="/todolist/signup/"><button class="btn">Sign up</button></a>
+    </div>
+{% endif %}
 {% endblock %}

@@ -1,0 +1,123 @@
+body{
+    background-color: rgb(5, 31, 18);
+}
+
+.close{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-width: 800px;
+    height: auto;
+    color: azure;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.loginclose{
+    margin: 13%;
+    display:block;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+    color: azure;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+.btn{
+    color: white;
+    background-color: gray;
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.btn:hover {
+    opacity: 0.8;
+
+}
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-color: #063624;
+    color: beige;
+    background-color: rgba(4, 161, 82, 0.424);
+}
+.greetings{
+    text-transform: uppercase;
+}
+.listbody{
+    background-color:  rgba(5, 31, 18, 0.233);
+    padding: 20px;
+}
+.btnsmall{
+    color: white;
+    background-color: #063624;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+
+}
+.btnsmall:hover {
+    opacity: 0.8;
+}
+.btnaddtask{
+    color: white;
+    background-color: #04aa6d8a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+}
+.btnaddtask:hover {
+    opacity: 0.8;
+}
+.Title{
+    text-align: center;
+    color:beige;
+}
+.time{
+    color:burlywood;
+    text-align: right;
+}
+.Logout{
+    color: rgba(241, 226, 20, 0.705);
+    background-color: #063624;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+.Logout:hover {
+    opacity: 0.8;
+}
+#id_description{
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: rgba(4, 161, 83, 0.493);
+}
+.details{
+    background-color:  rgba(5, 31, 18, 0.233);
+    padding: 20px;
+    margin-bottom: 10px;
+}

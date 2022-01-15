@@ -12,25 +12,30 @@
 <br/>
 {% endif %}
 
-<h1>Signup!</h1>
+<div class = "loginclose">
+<h1 class="head">Signup!</h1>
 
+<div class="body">
 <form method = "POST" action="{% url 'signup' %}">
     {% csrf_token %}
     username:
     <br/>
-    <input type="text" name="username" />
+    <input type="text" name="username" placeholder="Enter Username" name="uname" required />
     <br/>
     Password:
     <br/>
-    <input type="password" name="password1" />
+    <input type="password" name="password1" placeholder="Enter Password" name="psw" required/>
     <br/>
     confirm Password:
     <br/>
-    <input type="password" name="password2" />
+    <input type="password" name="password2" placeholder="Enter Password again" name="psw" required/>
     <br/>
-    <input class ="btn btn-primary" type="submit" value= "signup" />
+    <input class ="btn" type="submit" value= "Sign up" />
     <br/>
 </form>
+<a href="/todolist/login/"><button class="btn">Login</button></a>
+<div>
+<div>
 
 
 {% endblock %}

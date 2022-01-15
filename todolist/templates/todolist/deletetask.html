@@ -2,13 +2,21 @@
 
 {% block content %}
 
-<div class="main">
+{% if request.user.is_authenticated %}
+<div class="close">
     <form method="POST">
         {% csrf_token %}
         Are you want to delete this item ?
-        <input type="submit" value="Yes" />
-        <a href="/">Cancel </a>
+        <input class="btn" type="submit" value="Yes" />
     </form>
+    <a href="/todolist/"><button class="btn">Cancel</button></a>
 </div>
+
+{% else %}
+<div class="close">
+    <a href="/todolist/login/"><button class="btn">Login</button></a>
+    <a href="/todolist/signup/"><button class="btn">Sign up</button></a>
+    </div>
+{% endif %}
 
 {% endblock %}

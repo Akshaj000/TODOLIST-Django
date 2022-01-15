@@ -13,7 +13,6 @@ def task_new(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             task = form.save(commit=False)
-            task.isdone = False
             task.user = request.user
             task.created_date = timezone.now()
             task.save()
@@ -28,7 +27,6 @@ def task_edit(request,pk):
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
             task = form.save(commit=False)
-            task.isdone = False
             task.user = request.user
             task.created_date = timezone.now()
             task.save()
@@ -36,6 +34,22 @@ def task_edit(request,pk):
     else:
         form = TaskForm(instance=task)
     return render(request, 'todolist/taskform.html', {'form': form})
+
+# def task_check(request,pk):
+#     task = get_object_or_404(Task, pk = pk)
+#     if request.method == "POST":
+#         form = TaskForm(request.POST, instance=task)
+#         if form.is_valid():
+#             task = form.save(commit=False)
+#             task.text = Task.text()
+#             task.description = Task.description()
+#             task.user = request.user
+#             task.created_date = timezone.now()
+#             task.save()
+#             return redirect('taskslist')
+#     else:
+#         form = TaskForm(instance=task)
+#     return render(request, 'todolist/tasklist.html', {'form': form})
 
 def task_delete(request,pk):
     task = get_object_or_404(Task,pk=pk)
@@ -82,4 +96,4 @@ def login(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-    return redirect('home')
+    return redirect('login')

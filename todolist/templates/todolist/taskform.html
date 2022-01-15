@@ -1,9 +1,19 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+<div class="close">
     <h2>Add Task</h2>
     <form method="POST" class="task-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-secondary">Save</button>
     </form>
+    <a href="/todolist/"><button class="btn">Cancel</button></a>
+</div>
+{% else %}
+<div class="close">
+    <a href="/todolist/login/"><button class="btn">Login</button></a>
+    <a href="/todolist/signup/"><button class="btn">Sign up</button></a>
+    </div>
+{% endif %}
 {% endblock %}

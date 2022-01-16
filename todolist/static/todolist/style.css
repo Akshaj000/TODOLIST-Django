@@ -1,12 +1,11 @@
 body{
     display: inline;
-    /*background-color: rgb(5, 31, 18);*/
     background-size: 100%;
-    background-image: linear-gradient(to right, rgba(81, 255, 0, 0), rgba(0, 255, 76, 0.561));
+    background-image: linear-gradient(to right, rgba(81, 255, 0, 0), rgba(0, 255, 76, 0.472));
 }
 
 .close{
-    border-radius: 15px;
+    border-radius: 10px;
     border: 2px solid #73ad2100;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -17,12 +16,12 @@ body{
     max-width: 800px;
     height: auto;
     color: azure;
-    padding: 30px;
+    padding: 35px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 .loginclose{
     font-family: 'Courier New', Courier, monospace;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 2px solid #73ad2100;
     margin: 11%;
     display:block;
@@ -66,10 +65,11 @@ input[type=text], input[type=password]{
     color: rgb(245, 245, 220);
     background-color: rgba(4, 161, 82, 0);
 }
-.greetings{
+.capitalize{
     text-transform: uppercase;
 }
 .listbody{
+    font-family: 'Courier New', Courier, monospace;
     padding: 10px;
     background-color:  rgba(5, 31, 18, 0.233);
 }
@@ -87,6 +87,7 @@ input[type=text], input[type=password]{
 .row {
     display: flex;
 }
+
 .column {
     flex: 33.33%;
     padding: 5px;
@@ -152,5 +153,6 @@ input[type=text], input[type=password]{
     margin-bottom: 10px;
 }
 .buttons{
-    padding-left: 18%;
+    text-align: center;
+    position:relative;
 }

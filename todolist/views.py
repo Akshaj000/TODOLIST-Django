@@ -6,6 +6,7 @@ from .forms import TaskForm
 from django.shortcuts import redirect,render
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib.auth import logout
 
 
 def task_new(request):
@@ -72,7 +73,7 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             try:
                 User.objects.get(username = request.POST['username'])
-                return render (request,'accounts/signup.html', {'error':'Username is already taken!'})
+                return render (request,'todolist/signup.html', {'error':'Username is already taken!'})
             except User.DoesNotExist:
                 user = User.objects.create_user(request.POST['username'],password=request.POST['password1'])
                 auth.login(request,user)
@@ -96,5 +97,5 @@ def login(request):
 
 def logout(request):
     if request.method == 'POST':
-        auth.logout(request)
+        logout(request)
     return redirect('login')

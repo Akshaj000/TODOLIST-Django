@@ -5,22 +5,17 @@
 <div class='close'>
     <div class="listhead">
     <h1 class="Title ">TASK LIST</h1> 
-    <h3 class="greetings ">Hi {{request.user}},</h3> 
+    <p class="greetings ">Logged in as {{request.user}}.</p> 
     <a href = "/todolist/new/"><button class="btnaddtask">Add Task</button></a>
     <div>
     {% for list in tasklist %}  
         {% if list.user  == request.user %}
         <div class="listbody">
-            <h2 style="text-align:center;">{{ list.title }}</h2>
-            <div class="row">    
-                <div class="column">
-                    {% if list.isdone == True %}
-                    <p>status : <div style="color:lightgreen;">Completed</div></p>
-                    {% elif list.isdone == False %}
-                    <p>status : <div style="color:orange;">InComplete</div></p>
-                    {% endif %}
-                </div>
-            </div>
+            {% if list.isdone == True %}
+            <h3 style="text-align:center;"><s>{{ list.title }}</s></h3>
+            {% elif list.isdone == False %}
+            <h3 style="text-align:center;">{{ list.title }}</h3>
+            {% endif %}
             <div class ="buttons">
             <a href="/todolist/{{list.id}}/"><button class="btnsmall">View</button></a>
             <a href="/todolist/{{list.id}}/edit/"><button class="btnsmall">Edit</button></a>

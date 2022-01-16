@@ -1,8 +1,13 @@
 body{
-    background-color: rgb(5, 31, 18);
+    display: inline;
+    /*background-color: rgb(5, 31, 18);*/
+    background-size: 100%;
+    background-image: linear-gradient(to right, rgba(81, 255, 0, 0), rgba(0, 255, 76, 0.561));
 }
 
 .close{
+    border-radius: 15px;
+    border: 2px solid #73ad2100;
     margin-top: 30px;
     margin-bottom: 30px;
     display:block;
@@ -16,7 +21,10 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
 }
 .loginclose{
-    margin: 13%;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 15px;
+    border: 2px solid #73ad2100;
+    margin: 11%;
     display:block;
     position:relative;
     margin-left: auto;
@@ -30,10 +38,13 @@ body{
 
 }
 .btn{
-    color: white;
-    background-color: gray;
-    background-color: #04AA6D;
-    color: white;
+    border-radius: 5px;
+    border: 2px solid #73ad2100;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.644);
+    background-color: #04aa6db2;
+    background-image: linear-gradient(180deg, rgba(81, 255, 0, 0), rgba(13, 197, 68, 0.116));
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -45,24 +56,26 @@ body{
 
 }
 input[type=text], input[type=password]{
+    border-radius: 5px;
+    border: 2px solid #73ad2100;
     width: 100%;
     padding: 12px 15px;
     margin: 8px 0;
     box-sizing: border-box;
-    border-color: #063624;
-    color: beige;
-    background-color: rgba(4, 161, 82, 0.424);
+    border-color: #010a0742;
+    color: rgb(245, 245, 220);
+    background-color: rgba(4, 161, 82, 0);
 }
 .greetings{
     text-transform: uppercase;
 }
 .listbody{
+    padding: 10px;
     background-color:  rgba(5, 31, 18, 0.233);
-    padding: 20px;
 }
 .btnsmall{
     color: white;
-    background-color: #063624;
+    background-color: #06362449;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -71,12 +84,23 @@ input[type=text], input[type=password]{
     width: 25%;
 
 }
+.row {
+    display: flex;
+}
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
 .btnsmall:hover {
     opacity: 0.8;
 }
 .btnaddtask{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 2px solid #73ad2100;
     color: white;
     background-color: #04aa6d8a;
+    background-image: linear-gradient(180deg, rgba(81, 255, 0, 0), rgba(13, 197, 68, 0.116));
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -97,8 +121,11 @@ input[type=text], input[type=password]{
     text-align: right;
 }
 .Logout{
-    color: rgba(241, 226, 20, 0.705);
-    background-color: #063624;
+    border-radius: 7px;
+    border: 2px solid #73ad2100;
+    color: rgb(255, 255, 255);
+    background-color: #04aa6db2;
+    background-image: linear-gradient(180deg, rgba(81, 255, 0, 0), rgba(13, 197, 68, 0.116));
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -109,6 +136,9 @@ input[type=text], input[type=password]{
     opacity: 0.8;
 }
 #id_description{
+    border-radius: 7px;
+    border: 2px solid #73ad2100;
+    border-color: #06362400;
     width: 100%;
     padding: 12px 15px;
     margin: 8px 0;
@@ -120,4 +150,7 @@ input[type=text], input[type=password]{
     background-color:  rgba(5, 31, 18, 0.233);
     padding: 20px;
     margin-bottom: 10px;
+}
+.buttons{
+    padding-left: 18%;
 }

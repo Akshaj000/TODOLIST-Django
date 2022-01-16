@@ -4,26 +4,28 @@
 {% if request.user.is_authenticated %}
 <div class='close'>
     <div class="listhead">
-    <h1 class="Title ">TO DO LIST</h1> 
+    <h1 class="Title ">TASK LIST</h1> 
     <h3 class="greetings ">Hi {{request.user}},</h3> 
     <a href = "/todolist/new/"><button class="btnaddtask">Add Task</button></a>
     <div>
     {% for list in tasklist %}  
         {% if list.user  == request.user %}
         <div class="listbody">
-            <h2>{{ list.title }}</h2>
+            <h2 style="text-align:center;">{{ list.title }}</h2>
+            <div class="row">    
+                <div class="column">
+                    {% if list.isdone == True %}
+                    <p>status : <div style="color:lightgreen;">Completed</div></p>
+                    {% elif list.isdone == False %}
+                    <p>status : <div style="color:orange;">InComplete</div></p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class ="buttons">
             <a href="/todolist/{{list.id}}/"><button class="btnsmall">View</button></a>
             <a href="/todolist/{{list.id}}/edit/"><button class="btnsmall">Edit</button></a>
             <a href="/todolist/{{list.id}}/delete/"><button class="btnsmall">Delete</button></a>
-            <!--form method="POST" class="check-form">{% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="save btn btn-secondary">Save</button>
-            </form-->
-            {% if list.isdone == True %}
-            <h3>Completed</h3>
-            {% elif list.isdone == False %}
-            <h3>InComplete</h3>
-            {% endif %}
+            </div>
         </div>
         <br>
         {% endif %}

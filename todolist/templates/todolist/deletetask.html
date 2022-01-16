@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if request.user.is_authenticated %}
-<div class="close">
+<div class="deleteclose">
     <form method="POST">
         {% csrf_token %}
         <p style="text-align:center;">Do you want to delete this item ?</p>

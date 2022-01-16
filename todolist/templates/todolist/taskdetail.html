@@ -10,11 +10,16 @@
       <br>
       <h1 style="text-align:center">{{ Task.title }}</h1>
       <br>
-      <p>{{ Task.description | linebreaksbr}}</p>
+      <p style="text-align:center;"><strong>{{ Task.description | linebreaksbr}}</strong></p>
       <br>
+      {% if Task.isdone == True %}
+      <p style="text-align:left;">status : <div style="color:lightgreen;text-align:left;">Completed</div></p>
+      {% elif Task.isdone == False %}
+      <p style="text-align:left;">status : <div style="color:orange;text-align:left;">InComplete</div></p>
+      {% endif %}
     </div>
 
-      <a href="/todolist/"}"><button class="btnsmall">Back</button></a>
+      <a href="/todolist/"><button class="btnsmall">Back</button></a>
   <div>
 
   {% else %} 

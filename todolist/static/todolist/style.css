@@ -19,6 +19,21 @@ body{
     padding: 35px;
     background-color: rgba(0, 0, 0, 0.5);
 }
+.deleteclose{
+    border-radius: 10px;
+    border: 2px solid #73ad2100;
+    margin: 11%;
+    display:block;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+    color: azure;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 .loginclose{
     font-family: 'Courier New', Courier, monospace;
     border-radius: 10px;
@@ -62,8 +77,12 @@ input[type=text], input[type=password]{
     margin: 8px 0;
     box-sizing: border-box;
     border-color: #010a0742;
-    color: rgb(245, 245, 220);
+    color: whitesmoke;
+    font-size: medium;
     background-color: rgba(4, 161, 82, 0);
+}
+input[type=text]:hover, input[type=password]:hover{
+    background-color: rgba(15, 27, 21, 0.178);
 }
 .capitalize{
     text-transform: uppercase;
@@ -73,7 +92,12 @@ input[type=text], input[type=password]{
     padding: 10px;
     background-color:  rgba(5, 31, 18, 0.233);
 }
+.listbody:hover{
+    background-image: linear-gradient(rgba(81, 255, 0, 0), rgba(107, 246, 149, 0.116));
+}
 .btnsmall{
+    border-radius: 7px;
+    border: 2px solid #73ad2100;
     color: white;
     background-color: #06362449;
     color: white;
@@ -137,17 +161,24 @@ input[type=text], input[type=password]{
     opacity: 0.8;
 }
 #id_description{
-    border-radius: 7px;
+    border-radius: 5px;
     border: 2px solid #73ad2100;
-    border-color: #06362400;
     width: 100%;
     padding: 12px 15px;
     margin: 8px 0;
-    display: inline-block;
     box-sizing: border-box;
-    background-color: rgba(4, 161, 83, 0.493);
+    border-color: #010a0742;
+    color: whitesmoke;
+    font-size:x-large;
+    background-color: rgba(4, 161, 82, 0);
+}
+#id_description:hover{
+    background-color: rgba(15, 27, 21, 0.205);
 }
 .details{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 2px solid #73ad2100;
     background-color:  rgba(5, 31, 18, 0.233);
     padding: 20px;
     margin-bottom: 10px;

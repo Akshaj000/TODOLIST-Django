@@ -6,7 +6,7 @@
     <div class="listhead">
     <h1 class="Title ">TASK LIST</h1> 
     <p class="greetings ">Logged in as {{request.user}}.</p> 
-    <a href = "/todolist/new/"><button class="btnaddtask">Add Task</button></a>
+    <a href = "{% url 'task_new' %}"><button class="btnaddtask">Add Task</button></a>
     <div>
     {% for list in tasklist %}  
         {% if list.user  == request.user %}
@@ -17,20 +17,20 @@
             <h3 style="text-align:center;">{{ list.title }}</h3>
             {% endif %}
             <div class ="buttons">
-            <a href="/todolist/{{list.id}}/"><button class="btnsmall">View</button></a>
-            <a href="/todolist/{{list.id}}/edit/"><button class="btnsmall">Edit</button></a>
-            <a href="/todolist/{{list.id}}/delete/"><button class="btnsmall">Delete</button></a>
+            <a href="{% url 'taskdetail' pk=list.pk %}"><button class="btnsmall">View</button></a>
+            <a href="{% url 'task_edit' pk=list.pk %}"><button class="btnsmall">Edit</button></a>
+            <a href="{% url 'task_delete' pk=list.pk %}"><button class="btnsmall">Delete</button></a>
             </div>
         </div>
         <br>
         {% endif %}
     {% endfor %}
-    <a href="logout/"><button class="Logout">Logout</button></a>
+    <a href="{% url 'logout'%}"><button class="Logout">Logout</button></a>
 <div>
 {% else %}
 <div class="close">
-    <a href="/todolist/login/"><button class="btn">Login</button></a>
-    <a href="/todolist/signup/"><button class="btn">Sign up</button></a>
+    <a href="{% url 'login'%}"><button class="btn">Login</button></a>
+    <a href="{% url 'signup'%}"><button class="btn">Sign up</button></a>
     </div>
 {% endif %}
 

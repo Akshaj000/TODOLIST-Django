@@ -8,12 +8,12 @@
         {{ form.as_p }}
         <button type="submit" class="save btn btn-secondary">Save</button>
     </form>
-    <a href="/todolist/"><button class="btn">Cancel</button></a>
+    <a href="{% url 'taskslist'%}"><button class="btn">Cancel</button></a>
 </div>
 {% else %}
 <div class="close">
-    <a href="/todolist/login/"><button class="btn">Login</button></a>
-    <a href="/todolist/signup/"><button class="btn">Sign up</button></a>
+    <a href="{% url 'login'%}"><button class="btn">Login</button></a>
+    <a href="{% url 'signup'%}"><button class="btn">Sign up</button></a>
     </div>
 {% endif %}
 {% endblock %}
